@@ -21,8 +21,9 @@ public class Obstancles : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            ScoreSingleton.Instance.ShowEndScore();
+            ScoreSingleton.Instance.SaveScore();
+            Time.timeScale = 0f;   
         }
     }
 }

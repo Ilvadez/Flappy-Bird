@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreSingleton : MonoBehaviour
 {
     public static ScoreSingleton Instance { get; private set; }
     [SerializeField] private TextMeshProUGUI m_ScoreUI;
+    [SerializeField] private TextMeshProUGUI m_ScoreEndUI;
+    public UnityEvent EndGame = new UnityEvent();
     private int m_score;
     void Awake()
     {
@@ -31,5 +34,19 @@ public class ScoreSingleton : MonoBehaviour
     private void UpdateScore()
     {
         m_ScoreUI.text = $"{m_score}";
-    } 
+    }
+    public void SaveScore()
+    {
+        SaveScore save = new SaveScore();
+        int savedScore = PlayerPrefs.GetInt("Score");
+        if (savedScore < m_score)
+        {
+            save.Save(m_score);
+        }
+    }
+    public void ShowEndScore()
+    {
+        EndGame.Invoke();
+        m_ScoreEndUI.text = $"Score: {m_score}";
+    }
 }

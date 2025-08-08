@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bc38d8ce2448a9f47880fbb14d9a15f0
+guid: c2651a0fb7c45fc43b592afa8efc4635
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1969497438595790671
-    second: PipeStyle1_0
+      213: 1042372166568849574
+    second: AllBird1_7_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PipeStyle1_0
+      name: AllBird1_7_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 128
-        height: 160
+        y: 2
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b8c472b380faa4e0800000000000000
-      internalID: -1969497438595790671
+      spriteID: 6a0371876ff377e00800000000000000
+      internalID: 1042372166568849574
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PipeStyle1_0: -1969497438595790671
+      AllBird1_7_0: 1042372166568849574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

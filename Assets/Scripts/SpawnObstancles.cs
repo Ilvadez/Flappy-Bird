@@ -14,6 +14,7 @@ public class SpawnObstancles : MonoBehaviour
     [SerializeField] private float m_offsetX;
     [SerializeField] private float m_offsetY;
 
+    [SerializeField] private List<Material> m_materials;
     public bool Condition;
     void Awake()
     {
@@ -22,8 +23,8 @@ public class SpawnObstancles : MonoBehaviour
     }
     void Start()
     {
-        Spawn(m_prefabWall, 0, m_sizeCamera + 0.5f);
-        Spawn(m_prefabWall, 0, -m_sizeCamera - 0.5f);
+        var topZone = Spawn(m_prefabWall, 0, m_sizeCamera + 0.5f);
+        var bottomZone = Spawn(m_prefabWall, 0, -m_sizeCamera - 0.5f);
         StartCoroutine(StartSpawn(m_startDelaySpawn));
 
     }
@@ -34,13 +35,16 @@ public class SpawnObstancles : MonoBehaviour
 
         while (Condition)
         {
-            Spawn(m_prefabObstancle, m_sizeCamera * Camera.main.aspect + m_offsetX, Random.Range(-m_offsetY, m_offsetY));
+            GameObject pipe = Spawn(m_prefabObstancle, m_sizeCamera * Camera.main.aspect + m_offsetX, Random.Range(-m_offsetY, m_offsetY));
+            int range = Random.Range(0, m_materials.Count);
+            Debug.Log(range);
+            pipe.GetComponent<MovePipes>().InitMaterial(m_materials[range]);
             yield return new WaitForSeconds(m_spawnDelay);
         }
 
     }
-    private void Spawn(GameObject gameObject, float xPosition, float yPosition)
+    private GameObject Spawn(GameObject gameObject, float xPosition, float yPosition)
     {
-        Instantiate(gameObject, new Vector2(xPosition, yPosition), Quaternion.identity);
+        return Instantiate(gameObject, new Vector2(xPosition, yPosition), Quaternion.identity);
     }
 }
