@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2734256352386913077}
   - component: {fileID: 7717333857213321773}
+  - component: {fileID: -1643147724404098268}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Obstancle
@@ -48,6 +49,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 5
+--- !u!114 &-1643147724404098268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638802657459262282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5effd384e9154ad47871eded73404332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_pipe:
   - {fileID: 3266447063121989959}
   - {fileID: 8896533674708010670}

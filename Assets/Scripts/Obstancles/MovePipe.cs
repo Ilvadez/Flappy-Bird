@@ -3,7 +3,6 @@ using UnityEngine;
 public class MovePipes : MonoBehaviour
 {
     [SerializeField] private float m_speed;
-    [SerializeField] private GameObject[] m_pipe;
     private float m_endCameraSize;
     void Start()
     {
@@ -17,16 +16,5 @@ public class MovePipes : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-
-    public void InitMaterial(Material material)
-    {
-        foreach (var i in m_pipe)
-        {
-            Material[] mat = i.GetComponent<MeshRenderer>().materials;
-            mat[0] = material;
-            i.GetComponent<MeshRenderer>().materials = mat;
-        }
-        
     }
 }

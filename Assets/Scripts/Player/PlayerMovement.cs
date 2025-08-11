@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SpriteRenderer m_renderer;
     private Rigidbody m_rigidBody;
     private InputSystem_Actions m_actions;
-    private PlayerAnimation m_anim;
+    private IAnimationSprite m_anim;
     void Awake()
     {
         m_rigidBody = GetComponent<Rigidbody>();

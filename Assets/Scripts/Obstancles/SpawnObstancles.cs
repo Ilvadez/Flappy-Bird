@@ -38,7 +38,7 @@ public class SpawnObstancles : MonoBehaviour
             GameObject pipe = Spawn(m_prefabObstancle, m_sizeCamera * Camera.main.aspect + m_offsetX, Random.Range(-m_offsetY, m_offsetY));
             int range = Random.Range(0, m_materials.Count);
             Debug.Log(range);
-            pipe.GetComponent<MovePipes>().InitMaterial(m_materials[range]);
+            pipe.GetComponent<ISetMaterial>().SetMaterial(m_materials[range]);
             yield return new WaitForSeconds(m_spawnDelay);
         }
 

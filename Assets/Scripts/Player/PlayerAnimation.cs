@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAnimation
+public class PlayerAnimation : IAnimationSprite
 {
     [SerializeField] private Sprite[] m_animSprite;
     [SerializeField] private float m_delayAnimation;
