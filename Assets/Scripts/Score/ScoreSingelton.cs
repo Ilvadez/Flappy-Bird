@@ -1,13 +1,15 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
+using System;
 public class ScoreSingleton : MonoBehaviour
 {
     public static ScoreSingleton Instance { get; private set; }
     [SerializeField] private TextMeshProUGUI m_ScoreUI;
     [SerializeField] private TextMeshProUGUI m_ScoreEndUI;
     public UnityEvent EndGame = new UnityEvent();
+
+    public event Action EndGameEvent;
     private int m_score;
     void Awake()
     {
@@ -47,6 +49,7 @@ public class ScoreSingleton : MonoBehaviour
     public void ShowEndScore()
     {
         EndGame.Invoke();
+        EndGameEvent?.Invoke();
         m_ScoreEndUI.text = $"Score: {m_score}";
     }
 }

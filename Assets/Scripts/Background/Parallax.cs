@@ -3,11 +3,12 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
 
-    [SerializeField] private float m_speed;
-    [SerializeField] private GameObject m_prefab;
+    [SerializeField]
+    private float m_speed;
+    [SerializeField]
+    private GameObject m_prefab;
     private GameObject[] m_objectBackground = new GameObject[2];
-
-    private int m_indexSprite = 0;
+    private IChangeIndex m_logicBackground = new ChangeBackground();
     public Sprite[] Sprite = new Sprite[10];
     void Start()
     {
@@ -15,7 +16,7 @@ public class Parallax : MonoBehaviour
         {
             var j = Instantiate(m_prefab, transform);
             m_objectBackground[i] = j;
-            m_objectBackground[i].GetComponent<SpriteRenderer>().sprite = Sprite[m_indexSprite];
+            m_objectBackground[i].GetComponent<SpriteRenderer>().sprite = Sprite[m_logicBackground.Index];
         }
         m_objectBackground[1].transform.position = new Vector3(18, 0, 0);
     }
@@ -47,20 +48,12 @@ public class Parallax : MonoBehaviour
 
     public void IncreaseIndexSprite()
     {
-        m_indexSprite++;
-        if (m_indexSprite >= Sprite.Length)
-        {
-            m_indexSprite = 0;
-        }
+        m_logicBackground.IncreaseIndexSprite(Sprite.Length);
         UpdateBackground();
     }
     public void DecreaseIndexSprite()
     {
-        m_indexSprite--;
-        if (m_indexSprite < 0)
-        {
-            m_indexSprite = Sprite.Length-1;
-        }
+        m_logicBackground.DecreaseIndexSprite(Sprite.Length);
         UpdateBackground();
     }
 
@@ -68,7 +61,7 @@ public class Parallax : MonoBehaviour
     {
         foreach (var i in m_objectBackground)
         {
-            i.GetComponent<SpriteRenderer>().sprite = Sprite[m_indexSprite];
+            i.GetComponent<SpriteRenderer>().sprite = Sprite[m_logicBackground.Index];
         }
     }
 }

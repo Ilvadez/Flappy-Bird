@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_actions.Enable();
         m_actions.Player.Jump.performed += ctx => Click();
+        ScoreSingleton.Instance.EndGameEvent += DisableInput;
     }
     void Update()
     {
@@ -41,10 +42,15 @@ public class PlayerMovement : MonoBehaviour
         m_rigidBody.AddForce(transform.up * m_strengthClick, ForceMode.Force);
         StartCoroutine(m_anim.Animation());
     }
+    private void DisableInput()
+    {
+        OnDisable();
+    }
     public void OnDisable()
     {
         m_actions.Player.Jump.performed -= ctx => Click();
+        ScoreSingleton.Instance.EndGameEvent -= DisableInput;
         m_actions.Disable();
-           
+
     }
 }

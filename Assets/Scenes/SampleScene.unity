@@ -1735,17 +1735,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6516806425392895151, guid: 2b3a1d464dc342f49b0e17f6628c7d9a, type: 3}
   m_PrefabInstance: {fileID: 3530044329842401105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &860730639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6998278156164620265, guid: 2b3a1d464dc342f49b0e17f6628c7d9a, type: 3}
-  m_PrefabInstance: {fileID: 3530044329842401105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860730638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5852cb290464a5d4a957b8bd6a011244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &997107757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,18 +1930,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 860730639}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnDisable
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
